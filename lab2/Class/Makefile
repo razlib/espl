@@ -19,4 +19,8 @@ fgetname.o: fgetname.c fgetname.h
 
 
 clean:
-	rm -f testnl testfgn *.o
+	rm -f testnl testfgn *.o *~
+
+distclean: clean
+	rm -f canalyze
+	
