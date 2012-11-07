@@ -11,9 +11,6 @@ int cstring_cmp(const void *a, const void *b)
 {
      struct namestat *ia = ( struct namestat *)a;
      struct namestat *ib = ( struct namestat  *)b;
-     printf("Name1: %s\n", ia->name);
-     printf("Name2: %s\n", ib->name);
-     printf("RESULT: %d\n", strcmp(ia->name, ib->name));
     return strcmp(ia->name, ib->name);
 }
 
@@ -26,20 +23,12 @@ void printFileWords(char *fileName)
     {
       if (!isKeyWord(buffer))
       {
-	  printf("%s\n", buffer);
 	  add_name(NAME_LIST, buffer);  
       }
     }
     
     	//sort
-	qsort(NAME_LIST->names, NAME_LIST->size, sizeof(struct namestat *), cstring_cmp);
-	/*printf("BEGIN\n");
-	printf("SIZE: %d\n", nl->size);
-	for (i = 0; i < nl->size; ++i)
-	{
-	    printf("%s\n", nl->names[i].name);
-	}
-	printf("END\n");*/
+	qsort(NAME_LIST->names, NAME_LIST->size, sizeof(struct namestat), cstring_cmp);
 	
     
     int i;
