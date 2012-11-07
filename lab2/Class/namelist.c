@@ -21,26 +21,8 @@ static void expand_namelist(namelist nl) {
 }
 
 
-/*
-int cstring_cmp(const void *a, const void *b) 
-{ 
-
-    const char **ia = (const char **)a;
-    const char **ib = (const char **)b;
-    return strcmp(*ia, *ib);
-
-} */
-
-int cstring_cmp(const void *a, const void *b) 
-{
-    const char *ia = (const char *)a;
-    const char *ib = (const char *)b;
-    return strcmp(ia, ib);
-}
-
 void add_name(namelist nl, char *name) {
   	//printf("Name: %s\n", name);
-	//printf("SIZE: %d\n", nl->size);
 	//printf("CAPACITY: %d\n", nl->capacity);
 	
 	int i;
@@ -62,14 +44,7 @@ void add_name(namelist nl, char *name) {
 	nl->names[i].count = 1;
 	++nl->size;
 	
-	//sort
-	qsort(nl->names, nl->size, sizeof(char *), cstring_cmp);
-	
-	//for (i = 0; i < nl->size; ++i)
-	//{
-	    //printf("%s\n", nl->names[i].name);
-	//}
-	//printf("END\n");
+
 	
 	
 }
