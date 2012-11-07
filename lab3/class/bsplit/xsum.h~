@@ -1,0 +1,6 @@
+ 
+#ifndef NAMELIST_H
+#define NAMELIST_H
+int checksum(char *fileName);
+
+#endif
