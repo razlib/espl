@@ -1,4 +1,4 @@
 
-int checksum(char *fileName);
+int checksum(FILE *file);
 
 
