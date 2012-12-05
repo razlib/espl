@@ -1,4 +1,4 @@
 
-int checksum(FILE *file);
+int checksum(FILE *file, int skip4bytes);
 
 
