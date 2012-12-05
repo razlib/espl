@@ -1,0 +1,82 @@
+section .text
+global cmpstr
+cmpstr:
+push	ebp
+mov	ebp, esp
+mov	DWORD [ebp-4], 0 //int i = 0
+jmp	LOOP
+
+LOOP:
+mov 	eax, [ebp+8]
+add	eax  [ebp-4]
+movzx	eax, BYTE [eax]
+mov 	ebx, [ebp+12]
+add	ebx  [ebp-4]
+movzx	ebx, BYTE [ebx]
+test 	al, al //if (a[i] == 0)
+je 	Str1End
+test 	bl, bl //if (b[i] == 0)
+je 	Str2End
+
+add	DWORD [ebp-4], 1 //i++
+cmp 	ebx, ebx
+je LOOP
+
+
+Str1End:
+test	bl, bl
+je	Return0 
+cmp 	 eax, eax
+je 	 Return2	
+
+Str2End:
+test	al, al
+je	Return0 
+cmp 	 eax, eax
+je 	Return1
+
+Return0:
+xor	 eax, eax //eax = 0
+cmp 	 eax, eax
+je 	 RETURN	
+
+Return1:
+mov	 eax, 1
+cmp 	 eax, eax
+je 	 RETURN	
+
+Return2:
+mov	 eax, 2
+cmp 	 eax, eax
+je 	 RETURN	
+
+RETURN:
+mov esp, ebp
+pop ebp
+ret
+
+
+
+
+.L3:
+mov	eax, DWORD [ebp-4]
+mov ebx, eax
+sal eax, 3
+sal ebx, 1
+add eax, ebx
+mov	ebx, DWORD [ebp+8]
+movzx	ebx, BYTE [ebx]
+movsx	ebx, bl
+add	eax, ebx
+sub	eax, 48
+mov	DWORD [ebp-4], eax
+add	DWORD [ebp+8], 1
+.L2:
+mov	eax, DWORD [ebp+8]
+movzx	eax, BYTE [eax]
+test	al, al
+jne	.L3
+mov	eax, DWORD [ebp-4]
+mov esp, ebp
+pop ebp
+ret
