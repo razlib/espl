@@ -1,0 +1,9 @@
+total 72
+-rw-r--r-- 1 razlib floppy     0 Jan  1 16:09 a.txt
+drwxr-xr-x 2 razlib floppy  4096 Dec 26 18:44 elf
+-rwxr-xr-x 1 razlib floppy 21568 Jan  1 16:08 esplsh
+-rw-r--r-- 1 razlib floppy  3785 Jan  1 16:08 esplsh.c
+-rw-r--r-- 1 razlib floppy  4180 Jan  1 16:08 esplsh.c~
+-rw-r--r-- 1 razlib floppy 19344 Jan  1 16:08 esplsh.o
+-rw-r--r-- 1 razlib floppy   212 Dec 26 17:48 makefile
+-rw-r--r-- 1 razlib floppy   212 Dec 26 17:48 makefile~
