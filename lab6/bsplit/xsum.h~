@@ -1,0 +1,4 @@
+
+int checksum(FILE *file);
+
+
